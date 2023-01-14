@@ -24,6 +24,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 // app.use("/", index);
 app.get('/', (req: Request, res: Response) => {
+  // console.log( req );
   res.status(200).send('Welcome');
 });
 app.use('/articles', articlesRouter);
