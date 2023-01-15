@@ -1,6 +1,12 @@
-import { Router } from "express";
+import express from 'express';
 import * as controller from "../controllers/index";
 
-export const index = Router();
+const router = express.Router();
+router.get('/', function (req, res) {
+    console.log('req = %s', req);
+    res.redirect('/catalog');
+});
 
-index.get("/", controller.index);
+// router.get('/', articlesController.getAll)
+// index.get("/", controller.index);
+export { router as default };

@@ -1,23 +1,50 @@
+import { Request, Response } from 'express';
+import logger from '../common/logger';
+import * as flds_user from '../services/articles.service';
 
-import { Router } from 'express';
-// import * as expressJwt from 'express-jwt';
+const findAll = async(req: Request, res: Response) => {
+  console.log('findAll query = %s', req.query);
+  console.log('findAll body = %s', req.body);
+  console.log('findAll params = %s', req.params);
 
-// import Locals from '../providers/Locals';
+  // let table = `${global.userConfig.flds_comp}.flds_user`;
+  // // 跨不同資料庫+table, #RFID.資料庫代號=公司代號
+  // console.log('table: %s', table);
+  // const promise2 = await Flds_user.getAll(table);
+  // console.log('promise2');
+  // console.log(promise2);
+  // // res.json(promise2);
 
-import HomeController from '../controllers/Home';
-// import LoginController from '../controllers/Api/Auth/Login';
-// import RegisterController from '../controllers/Api/Auth/Register';
-// import RefreshTokenController from '../controllers/Api/Auth/RefreshToken';
+  let msgret = {
+    code: 200,
+    msg: `flds_user findAll successfully.`,
+    data: "promise2",
+  };
+  res.json(msgret);
+};
 
-const router = Router();
+export { findAll };
 
-router.get('/', HomeController.index);
 
-// router.post('/auth/login', LoginController.perform);
-// router.post('/auth/register', RegisterController.perform);
-// router.post('/auth/refresh-token', expressJwt({ secret: Locals.config().appSecret }), RefreshTokenController.perform);
+// import { Router } from 'express';
+// // import * as expressJwt from 'express-jwt';
 
-export default router;
+// // import Locals from '../providers/Locals';
+
+// import HomeController from '../controllers/Home';
+// // import LoginController from '../controllers/Api/Auth/Login';
+// // import RegisterController from '../controllers/Api/Auth/Register';
+// // import RefreshTokenController from '../controllers/Api/Auth/RefreshToken';
+
+// const router = Router();
+
+// router.get('/', HomeController.index);
+
+// // router.post('/auth/login', LoginController.perform);
+// // router.post('/auth/register', RegisterController.perform);
+// // router.post('/auth/refresh-token', expressJwt({ secret: Locals.config().appSecret }), RefreshTokenController.perform);
+
+// export default router;
 
 
 // 'use strict';

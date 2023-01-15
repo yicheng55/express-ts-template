@@ -1,8 +1,7 @@
-'use strict';
 import express from 'express';
 const router = express.Router();
 
-import * as flds_user from "../controllers/flds_user.controller.js";
+import * as flds_user from "../controllers/flds_user.controller";
 
 // 在每一個請求被處理之前都會執行的 middleware
 router.use(function(req, res, next) {
@@ -15,8 +14,8 @@ router.use(function(req, res, next) {
 });
 
 // // Retrieve all flds_user
-// router.get("/", flds_user.findAll);
-// // router.post("/", flds_user.findAll);
+router.get("/", flds_user.findAll);
+// router.post("/", flds_user.findAll);
 // router.post("/", flds_user.create);
 
 // router.get("/findsearch", flds_user.findSearch);
