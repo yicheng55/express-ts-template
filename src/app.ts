@@ -7,6 +7,7 @@ import { errorHandler, errorNotFoundHandler } from "./middlewares/errorHandler";
 
 // Routes
 import index from "./routes/index";
+import catalogRouter from './routes/catalog.routes';  //Import routes for "catalog" area of site
 import  userRouter  from "./routes/flds_user.routes";
 import articlesRouter from './routes/articles.router';
 // const flds_userRouter = require('./routes/flds_user.routes.ts');  //Import routes for "product" area of site
@@ -29,7 +30,8 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 //middleware
 app.use('/', index);
-
+app.use('/catalog', catalogRouter);
+//
 // app.get('/', (req: Request, res: Response) => {
 //   // console.log( req );
 //   res.status(200).send('Welcome');

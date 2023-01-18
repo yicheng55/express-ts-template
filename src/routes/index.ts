@@ -3,7 +3,7 @@ import * as controller from "../controllers/index";
 
 const router = express.Router();
 router.get('/', function (req, res) {
-    console.log('req = %s', req);
+    // console.log('req = %s', req);
     res.redirect('/catalog');
 });
 
